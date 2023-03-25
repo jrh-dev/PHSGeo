@@ -62,6 +62,9 @@ setup_env = function() {
   
   message("GDAL_DATA added as environment variable")
   
+  dyn.load(gdal['gdal_dyn'])
+  dyn.load(geos['geos_dyn'], local = FALSE)
+  
   .PHSGeo_env = new.env()
   
   PHSGeo_deps = list(

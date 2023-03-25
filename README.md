@@ -25,6 +25,8 @@ devtools::install_github("https://github.com/jrh-dev/PHSGeo")
 
 ## Usage
 
+### To install geospatial packages
+
 To install all of the geospatial packages listed above;
 
 ```r
@@ -63,6 +65,25 @@ during re-installation.
 
 No testing has been performed to ascertain compatibility with environment
 managers such as `.renv`.
+
+### Post installation - on every usage of geospatial packages
+
+Following installation some changes must be made to the users environment
+before the packages can be used. The user must make these changes every time a
+geospatial package is used.
+
+The simplest way to ensure the environment is ready to use a geospatial package
+is to add `PHSGeo::setup_env()` to every script utilising these packages. The
+code should run before geospatial libraries are loaded and the `PHSGeo` package 
+should never be loaded with a call to `library()`, always access `PHSGeo` with 
+its namespace.
+
+```r
+PHSGeo::setup_env()
+
+library(sf)
+library(terra)
+```
 
 ## What does this package do?
 
