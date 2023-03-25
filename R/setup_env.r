@@ -19,12 +19,10 @@
 #'  
 #'  Auto-detection of a working version of system dependencies is performed.
 #'  
-#'  @param ... placeholder for future development
-#'  
 #'  @return invisible, function is called for its side-effects
 #'  
 #'  @export
-setup_env = function(...) {
+setup_env = function() {
   
   if (.Platform$OS.type != "unix") {
     stop("Linux OS required")
@@ -46,8 +44,8 @@ setup_env = function(...) {
   tryCatch(
     Sys.setenv(LD_LIBRARY_PATH = new_path),
     error = function(cond) {
-      msg("Unable to set LD_LIBRARY_PATH to;\n")
-      msg(new_path)
+      message("Unable to set LD_LIBRARY_PATH to;\n")
+      message(new_path)
       stop(cond)
     }
   )

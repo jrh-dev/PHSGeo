@@ -16,7 +16,7 @@ clean_install = function(
     binary_repo = "https://ppm.publichealthscotland.org/all-r/__linux__/centos7/latest"
     ) {
   
-  installed_pkgs = as.data.frame(installed.packages())
+  installed_pkgs = as.data.frame(utils::installed.packages())
   
   # note base packages
   base_pkgs = installed_pkgs$Package[
@@ -43,12 +43,12 @@ clean_install = function(
     for (pkg in geo_deps_installed) {
       eval(parse(text=glue::glue("detach(package:{pkgs},unload=TRUE)")))
       message(glue::glue("Removing {pkg}"))
-      remove.packages(pkg)
+      utils::remove.packages(pkg)
     }
   }
   
   # start clean install
-  install.packages("parallelly")
+  utils::install.packages("parallelly")
   
   # Identify number of CPUs available
   ncpus = as.numeric(parallelly::availableCores())
@@ -60,7 +60,7 @@ clean_install = function(
   for (pkg in geo_deps_bin) {
     eval(parse(text=glue::glue("detach(package:{pkg},unload=TRUE)")))
     message(glue::glue("Installing {pkg}"))
-    install.packages(pkg, repos = binary_repo, Ncpus = ncpus)
+    utils::install.packages(pkg, repos = binary_repo, Ncpus = ncpus)
   }
   
   return(invisible())
