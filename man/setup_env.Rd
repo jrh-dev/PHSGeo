@@ -7,6 +7,9 @@ geospatial packages}
 \usage{
 setup_env()
 }
+\value{
+invisible, function is called for its side-effects
+}
 \description{
 Appends;
 \itemize{
@@ -25,8 +28,4 @@ Sets;
 as environment variables.
 
 Auto-detection of a working version of system dependencies is performed.
-
-@return invisible, function is called for its side-effects
-
-@export
 }
