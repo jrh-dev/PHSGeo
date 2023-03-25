@@ -19,9 +19,8 @@
 #'  
 #'  Auto-detection of a working version of system dependencies is performed.
 #'  
-#'  @return invisible, function is called for its side-effects
-#'  
-#'  @export
+#' @return invisible, function is called for its side-effects
+#' @export
 setup_env = function() {
   
   if (.Platform$OS.type != "unix") {
