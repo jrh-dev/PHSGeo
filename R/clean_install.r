@@ -9,8 +9,6 @@
 #' @param binary_repo url to specify a repo for package binaries
 #' 
 #' @return invisible, function is called for its side-effects
-#' 
-#' @export
 clean_install = function(
     geo_pkgs = c("leaflet", "rgdal", "raster", "sp", "terra", "sf"),
     binary_repo = "https://ppm.publichealthscotland.org/all-r/__linux__/centos7/latest"
