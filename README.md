@@ -17,7 +17,7 @@ wider usage; the methods provided are unlikely to work in a more general setup.
 Install `PHSGeo` from GitHub;
 
 ```r
-devtools::install_github("https://github.com/jrh-dev/odns")
+devtools::install_github("https://github.com/jrh-dev/PHSGeo")
 ```
 
 ## Usage
