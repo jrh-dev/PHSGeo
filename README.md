@@ -1,4 +1,4 @@
-# PHSGeo - Helper package to install geospatial packages
+# PHSGeo - Helper to install R geospatial packages
 
 This package helps with the installation of geospatial packages;
 
@@ -11,6 +11,9 @@ This package helps with the installation of geospatial packages;
 
 The package is written for a highly specific environment and is not intended for
 wider usage; the methods provided are unlikely to work in a more general setup.
+
+This package is NOT supported or commissioned by any organisation and usage is
+at your own risk as per the license conditions.
 
 ## Installation
 
@@ -52,7 +55,7 @@ PHSGeo::install_geospatial(clean = TRUE)
 PHSGeo::install_geospatial(pkgs = "sf, clean = TRUE)
 ```
 
-Please note that using `clean = TRUE` should be used as a last resort when
+Please note that using `clean = TRUE` should be a last resort when
 installation has proved problematic. Removing and performing a fresh 
 installation of all geospatial dependencies will take a long time, is 
 typically unnecessary, and the package versions removed will NOT be respected
